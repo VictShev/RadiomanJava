@@ -12,6 +12,7 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void ShouldSetVolumeBetweenBoundaries() {
         Radio radio = new Radio();
@@ -33,6 +34,7 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void ShouldSetPreviousStation() {
         Radio radio = new Radio();
@@ -44,26 +46,38 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void ShouldIncreaseByOneVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(2);
+        radio.setCurrentVolume(15);
 
         radio.nextVolume();
 
-        int expected = 3;
+        int expected = 16;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void ShouldSetPreviousVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(8);
+        radio.setCurrentVolume(7);
 
         radio.previousVolume();
 
-        int expected = 7;
+        int expected = 6;
         int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void ShouldSetStationsCount() {
+        Radio radio = new Radio(10);
+        radio.setCurrentStation(9);
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 }
