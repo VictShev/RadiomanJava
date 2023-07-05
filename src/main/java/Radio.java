@@ -2,10 +2,25 @@ public class Radio {
 
     private int CurrentStation;
     private int CurrentVolume;
+    private int maxStation;
+    private int minStation;
+    private int maxVolume;
+    private int minVolume;
 
+
+    public Radio() {
+        maxStation = 9;
+        minStation = 0;
+        maxVolume = 100;
+        minVolume = 0;
+    }
+
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+    }
 
     public void nextStation() {
-        if (CurrentStation != 9) {
+        if (CurrentStation != maxStation) {
             CurrentStation++;
         } else {
             CurrentStation = 0;
@@ -16,23 +31,22 @@ public class Radio {
         if (CurrentStation != 0) {
             CurrentStation--;
         } else {
-            CurrentStation = 9;
+            CurrentStation = maxStation;
         }
     }
 
     public void nextVolume() {
-        if (CurrentVolume != 10) {
+        if (CurrentVolume != 100) {
             CurrentVolume++;
         } else {
             CurrentVolume = 0;
         }
     }
-
     public void previousVolume() {
         if (CurrentVolume != 0) {
             CurrentVolume--;
         } else {
-            CurrentVolume = 10;
+            CurrentVolume = 100;
         }
     }
 
@@ -44,7 +58,7 @@ public class Radio {
         if (CurrentStation < 0) {
             return;
         }
-        if (CurrentStation > 9) {
+        if (CurrentStation > maxStation) {
             return;
         }
         this.CurrentStation = currentStation;
@@ -58,7 +72,7 @@ public class Radio {
         if (CurrentVolume < 0) {
             return;
         }
-        if (CurrentVolume > 10) {
+        if (CurrentVolume > 100) {
             return;
         }
         this.CurrentVolume = currentVolume;
