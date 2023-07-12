@@ -1,67 +1,67 @@
 public class Radio {
 
-    private int CurrentStation;
-    private int CurrentVolume;
+    private int currentStation;
+    private int currentVolume;
 
 
     public void nextStation() {
-        if (CurrentStation != 9) {
-            CurrentStation++;
+        if (currentStation != 9) {
+            currentStation++;
         } else {
-            CurrentStation = 0;
+            currentStation = 0;
         }
     }
 
     public void previousStation() {
-        if (CurrentStation != 0) {
-            CurrentStation--;
+        if (currentStation != 0) {
+            currentStation--;
         } else {
-            CurrentStation = 9;
+            currentStation = 9;
         }
     }
 
     public void nextVolume() {
-        if (CurrentVolume != 10) {
-            CurrentVolume++;
+        if (currentVolume != 10) {
+            currentVolume++;
         } else {
-            CurrentVolume = 0;
+            currentVolume = 0;
         }
     }
 
     public void previousVolume() {
-        if (CurrentVolume != 0) {
-            CurrentVolume--;
+        if (currentVolume != 0) {
+            currentVolume--;
         } else {
-            CurrentVolume = 10;
+            currentVolume = 10;
         }
     }
 
     public int getCurrentStation() {
-        return CurrentStation;
+        return currentStation;
     }
 
     public void setCurrentStation(int currentStation) {
-        if (CurrentStation < 0) {
+        if (currentStation < 0) {
             return;
         }
-        if (CurrentStation > 9) {
+        if (currentStation > 9) {
             return;
         }
-        this.CurrentStation = currentStation;
+        this.currentStation = currentStation;
     }
 
     public int getCurrentVolume() {
-        return CurrentVolume;
+        return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (CurrentVolume < 0) {
+        if (currentVolume < 0) {
             return;
         }
-        if (CurrentVolume > 10) {
+        if (currentVolume > 10) {
             return;
         }
-        this.CurrentVolume = currentVolume;
+        this.currentVolume = currentVolume;
     }
 }
 
